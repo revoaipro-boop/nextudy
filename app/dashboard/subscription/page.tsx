@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/server'
 import SubscriptionClient from './subscription-client'
 
 export const metadata: Metadata = {
-  title: 'Gestion de l'abonnement - Nextudy',
+  title: "Gestion de l'abonnement - Nextudy",
   description: 'Gérez votre abonnement Premium Nextudy',
 }
 
