@@ -1,0 +1,20 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nextudy.vercel.app
+
+# Sitemaps
+Sitemap: https://nextudy.vercel.app/sitemap.xml
+
+# Disallow private routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /profile
+Disallow: /settings
+Disallow: /todos
+Disallow: /processing
+Disallow: /results/
+Disallow: /shared/
+Disallow: /texte/shared/
