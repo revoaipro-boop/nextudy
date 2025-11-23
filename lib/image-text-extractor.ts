@@ -11,6 +11,8 @@ export async function extractTextFromImage(file: File): Promise<string> {
       reader.readAsDataURL(file)
     })
 
+    const base64Data = base64.split(",")[1]
+
     const result = await generateText({
       model: "google/gemini-2.0-flash",
       messages: [
@@ -19,15 +21,26 @@ export async function extractTextFromImage(file: File): Promise<string> {
           content: [
             {
               type: "text",
-              text: "Extrait tout le texte visible dans cette image. Retourne uniquement le texte, sans commentaire ni explication.",
+              text: `Analyse cette image et extrais TOUT le texte visible de manière structurée.
+
+RÈGLES :
+- Extrais chaque mot, chaque ligne, chaque annotation
+- Conserve la structure (titres, paragraphes, listes)
+- Pour les formules mathématiques, utilise la notation LaTeX si possible
+- Pour les schémas, décris les éléments visuels importants
+- Indique [illisible] si un texte n'est pas clair
+
+Retourne le texte extrait en Markdown.`,
             },
             {
               type: "image",
-              image: base64,
+              image: base64Data,
             },
           ],
         },
       ],
+      maxTokens: 2500,
+      temperature: 0.1, // Température basse pour précision
     })
 
     console.log("[v0] Image text extraction successful with Gemini, length:", result.text.length)

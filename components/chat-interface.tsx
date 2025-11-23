@@ -26,6 +26,7 @@ interface Message {
   content: string
   images?: string[]
   displayContent?: string
+  timestamp?: number
 }
 
 export function ChatInterface({ subject, grade, format, conversationId, initialMessages = [] }: ChatInterfaceProps) {
@@ -131,7 +132,7 @@ export function ChatInterface({ subject, grade, format, conversationId, initialM
       if (!currentConversationId) {
         const shortId = generateShortId()
         setCurrentConversationId(shortId)
-        router.push(`/chat-ia/c/${shortId}`)
+        window.history.pushState(null, "", `/chat-ia/c/${shortId}`)
 
         // Create conversation in database
         try {
@@ -144,6 +145,11 @@ export function ChatInterface({ subject, grade, format, conversationId, initialM
               subject,
               grade,
               format,
+              messages: [{
+                role: "user",
+                content: fullContent,
+                timestamp: Date.now()
+              }]
             }),
           })
         } catch (error) {
@@ -165,6 +171,7 @@ export function ChatInterface({ subject, grade, format, conversationId, initialM
               role: m.role,
               content: m.content,
               images: m.images,
+              timestamp: m.timestamp
             })),
           }),
         })

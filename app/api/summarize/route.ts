@@ -90,18 +90,36 @@ async function extractTextFromImage(base64Data: string, mediaType: string): Prom
           content: [
             {
               type: "text",
-              text: "Analyse cette image et extrais tout le texte visible. Si c'est un document, une photo de cours, un tableau ou tout contenu éducatif, décris également le contenu de manière structurée. Réponds uniquement avec le texte extrait et la description du contenu, sans commentaire additionnel.",
+              text: `Tu es un expert en extraction de texte et analyse de documents éducatifs.
+
+OBJECTIF : Extraire TOUT le texte visible dans cette image avec une précision maximale.
+
+INSTRUCTIONS :
+1. Identifie le type de document (cours, notes, livre, tableau, schéma, exercice, etc.)
+2. Extrais TOUT le texte lisible, même les petites annotations
+3. Conserve la structure et la hiérarchie (titres, sous-titres, listes, etc.)
+4. Pour les schémas/graphiques : décris-les en détail
+5. Pour les formules mathématiques : transcris-les précisément
+6. Pour les tableaux : reformate-les de manière claire
+
+FORMAT DE SORTIE :
+- Utilise le Markdown pour structurer le texte extrait
+- Mets les titres en ## ou ###
+- Préserve les listes à puces et numérotées
+- Indique les formules entre $$...$$
+- Pour les schémas, commence par "📊 SCHÉMA:" suivi de la description
+
+IMPORTANT : Extrais même le texte flou ou difficile à lire en indiquant [texte incertain] si besoin.`,
             },
             {
               type: "image",
               image: base64Data,
-              mimeType: mediaType,
             },
           ],
         },
       ],
-      maxTokens: 2000,
-      temperature: 0.3,
+      maxTokens: 3000,
+      temperature: 0.1, // Température très basse pour plus de précision
     })
 
     console.log("[v0] Successfully extracted text from image, length:", text.length)
@@ -342,7 +360,7 @@ RÈGLES ABSOLUES :
 
 RÈGLES STRICTES DE FORMATAGE :
 1. Réponds UNIQUEMENT avec un JSON valide
-2. PAS de virgules apr��s le dernier élément
+2. PAS de virgules après le dernier élément
 3. PAS de guillemets dans les définitions (sauf pour le JSON)
 4. PAS de parenthèses ni de crochets dans les définitions
 5. PAS de symboles markdown (#, *, _, etc.)

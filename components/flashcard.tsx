@@ -42,6 +42,7 @@ function SingleFlashcard({ question, answer, isFlipped, onFlip, isTransitioning 
           style={{
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
+            visibility: isFlipped ? "hidden" : "visible",
           }}
         >
           <div className="space-y-4">
@@ -57,6 +58,7 @@ function SingleFlashcard({ question, answer, isFlipped, onFlip, isTransitioning 
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
+            visibility: isFlipped ? "visible" : "hidden",
           }}
         >
           <div className="space-y-4">
