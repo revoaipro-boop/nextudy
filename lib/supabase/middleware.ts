@@ -42,38 +42,35 @@ export async function updateSession(request: NextRequest) {
   }
 
   if (user) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("is_verified, verification_status, role")
-      .eq("id", user.id)
-      .single()
-
     const { data: activationToken } = await supabase
       .from("activation_tokens")
       .select("used")
       .eq("user_id", user.id)
       .single()
 
-    const isApproved = activationToken 
-      ? activationToken.used 
-      : profile?.verification_status === "approved"
-
-    if (!isApproved) {
-      console.log("[v0] User not activated/approved, redirecting to pending")
+    // If no activation token or not used, redirect to login with error
+    if (!activationToken || !activationToken.used) {
+      console.log("[v0] User not activated, signing out")
+      await supabase.auth.signOut()
       const url = request.nextUrl.clone()
-      url.pathname = "/auth/pending-approval"
+      url.pathname = "/auth/login"
+      url.searchParams.set("error", "account_not_activated")
       return NextResponse.redirect(url)
     }
 
-    if (profile?.role) {
-      const response = NextResponse.next({
-        request: {
-          headers: new Headers(request.headers),
-        },
-      })
-      response.headers.set('x-user-role', profile.role)
-      response.headers.set('x-user-id', user.id)
-      supabaseResponse = response
+    // Also check profile verification status
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("is_verified, verification_status")
+      .eq("id", user.id)
+      .single()
+
+    if (profile && profile.verification_status !== "approved") {
+      await supabase.auth.signOut()
+      const url = request.nextUrl.clone()
+      url.pathname = "/auth/login"
+      url.searchParams.set("error", "account_pending")
+      return NextResponse.redirect(url)
     }
   }
 

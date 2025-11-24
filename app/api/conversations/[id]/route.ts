@@ -17,10 +17,11 @@ export async function GET(
 
     const { id } = params
 
+    // Get conversation
     const { data: conversation, error: convError } = await supabase
       .from("conversations")
       .select("*")
-      .eq("short_id", id)
+      .eq("id", id)
       .eq("user_id", user.id)
       .single()
 
@@ -28,10 +29,11 @@ export async function GET(
       return NextResponse.json({ error: "Conversation not found" }, { status: 404 })
     }
 
+    // Get messages
     const { data: messages, error: msgError } = await supabase
       .from("conversation_messages")
       .select("*")
-      .eq("conversation_id", conversation.id)
+      .eq("conversation_id", id)
       .order("timestamp", { ascending: true })
 
     if (msgError) {
@@ -40,7 +42,7 @@ export async function GET(
     }
 
     return NextResponse.json({
-      id: conversation.short_id,
+      id: conversation.id,
       title: conversation.title,
       subject: conversation.subject,
       grade: conversation.grade,
@@ -78,10 +80,11 @@ export async function PATCH(
     const { id } = params
     const { messages } = await request.json()
 
+    // Verify ownership
     const { data: conversation } = await supabase
       .from("conversations")
       .select("id")
-      .eq("short_id", id)
+      .eq("id", id)
       .eq("user_id", user.id)
       .single()
 
@@ -89,16 +92,16 @@ export async function PATCH(
       return NextResponse.json({ error: "Conversation not found" }, { status: 404 })
     }
 
-    // Update conversation updated_at using the UUID
+    // Update conversation updated_at
     await supabase
       .from("conversations")
       .update({ updated_at: new Date().toISOString() })
-      .eq("id", conversation.id)
+      .eq("id", id)
 
-    // Insert new messages using the UUID
+    // Insert new messages
     if (messages && messages.length > 0) {
       const messagesToInsert = messages.map((m: any) => ({
-        conversation_id: conversation.id,
+        conversation_id: id,
         role: m.role,
         content: m.content,
         sources: m.sources || null,
@@ -138,10 +141,11 @@ export async function DELETE(
 
     const { id } = params
 
+    // Delete conversation (messages will be cascade deleted)
     const { error } = await supabase
       .from("conversations")
       .delete()
-      .eq("short_id", id)
+      .eq("id", id)
       .eq("user_id", user.id)
 
     if (error) {

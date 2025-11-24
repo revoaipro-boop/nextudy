@@ -622,9 +622,11 @@ export default function ClientPage() {
                     </div>
                     <h3 className="text-3xl md:text-4xl font-bold mb-4 text-balance">Importez vos documents</h3>
                     <p className="text-lg text-muted-foreground text-pretty">
-                      PDF, Word, TXT, Markdown, RTF, Images
+                      PDF, Word, TXT, Markdown, RTF, Images (JPG, JPEG, PNG, WEBP)
                     </p>
-                    
+                    <p className="text-xs text-muted-foreground text-pretty">
+                      Vous pouvez importer plusieurs fichiers à la fois
+                    </p>
                   </div>
                   <PDFUploader />
                 </div>

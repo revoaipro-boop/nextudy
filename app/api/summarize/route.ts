@@ -342,7 +342,7 @@ RÈGLES ABSOLUES :
 
 RÈGLES STRICTES DE FORMATAGE :
 1. Réponds UNIQUEMENT avec un JSON valide
-2. PAS de virgules apr��s le dernier élément
+2. PAS de virgules après le dernier élément
 3. PAS de guillemets dans les définitions (sauf pour le JSON)
 4. PAS de parenthèses ni de crochets dans les définitions
 5. PAS de symboles markdown (#, *, _, etc.)

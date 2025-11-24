@@ -78,13 +78,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
-    const { shortId, title, subject, grade, format, messages } = await request.json()
+    const { title, subject, grade, format, messages } = await request.json()
 
+    // Create conversation
     const { data: conversation, error: convError } = await supabase
       .from("conversations")
       .insert({
         user_id: user.id,
-        short_id: shortId, // Store the short ID
         title,
         subject,
         grade,
@@ -117,7 +117,7 @@ export async function POST(request: Request) {
       }
     }
 
-    return NextResponse.json({ conversationId: conversation.short_id })
+    return NextResponse.json({ conversationId: conversation.id })
   } catch (error) {
     console.error("[v0] Error in POST conversations:", error)
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })

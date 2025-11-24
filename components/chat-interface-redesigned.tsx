@@ -520,7 +520,7 @@ export function ChatInterfaceRedesigned({ subject, grade, format, onReset }: Cha
           )}
 
           <form onSubmit={handleSubmit} className="relative">
-            <div className="flex items-center gap-3 bg-[#2f2f2f] rounded-full px-4 py-3 max-w-3xl mx-auto text-black bg-background border-secondary-foreground border">
+            <div className="flex items-center gap-3 bg-[#2f2f2f] rounded-full px-4 py-3 max-w-3xl mx-auto border border-gray-700">
               {/* Plus button for attachments */}
               <input
                 ref={fileInputRef}
@@ -570,7 +570,7 @@ export function ChatInterfaceRedesigned({ subject, grade, format, onReset }: Cha
                 disabled={(!input.trim() && uploadedFiles.length === 0) || isLoading || isRecording}
                 className="flex-shrink-0 text-gray-400 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Send className="h-5 w-5 text-[rgba(255,255,255,1)] bg-background" />
+                <Send className="h-5 w-5" />
               </button>
             </div>
           </form>

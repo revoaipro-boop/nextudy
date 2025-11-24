@@ -51,49 +51,27 @@ export function generateConversationTitle(firstUserMessage: string): string {
 }
 
 /**
- * Generate a short alphanumeric ID for conversation URLs
- * Format: 4-6 characters (e.g., "1TRF", "A3X2")
- */
-export function generateShortId(): string {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-  const length = 4
-  let result = ''
-  for (let i = 0; i < length; i++) {
-    result += chars.charAt(Math.floor(Math.random() * chars.length))
-  }
-  return result
-}
-
-/**
  * Create a new conversation
  */
 export async function createConversation(
   subject: string,
   grade: string,
   format: string,
-  firstMessage?: any
+  firstMessage?: Message
 ): Promise<string> {
   const title = firstMessage 
     ? generateConversationTitle(firstMessage.content)
     : "Nouvelle conversation"
   
-  const shortId = generateShortId()
-  
   const response = await fetch('/api/conversations', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      shortId,
       title,
       subject,
       grade,
       format,
-      messages: firstMessage ? [{
-        id: firstMessage.id,
-        role: firstMessage.role,
-        content: firstMessage.content,
-        timestamp: Date.now()
-      }] : []
+      messages: firstMessage ? [firstMessage] : []
     })
   })
   
