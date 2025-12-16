@@ -4,9 +4,9 @@
 
 Lorsqu'un utilisateur clique sur le lien magique envoyé par e-mail, Supabase redirige vers votre application avec les tokens d'authentification dans le fragment d'URL (hash) :
 
-\`\`\`
+```
 https://v0-remix-of-study-ai-ten.vercel.app/auth/session-handler#access_token=...&refresh_token=...
-\`\`\`
+```
 
 Pour que cette redirection fonctionne, vous **DEVEZ** configurer l'URL de redirection dans les paramètres Supabase.
 
@@ -16,9 +16,9 @@ Pour que cette redirection fonctionne, vous **DEVEZ** configurer l'URL de redire
 
 Assurez-vous que la variable `NEXT_PUBLIC_APP_URL` est définie dans vos variables d'environnement Vercel :
 
-\`\`\`bash
+```bash
 NEXT_PUBLIC_APP_URL=https://v0-remix-of-study-ai-ten.vercel.app
-\`\`\`
+```
 
 **Important :** Cette variable doit être définie **sans** le slash final.
 
@@ -29,17 +29,17 @@ NEXT_PUBLIC_APP_URL=https://v0-remix-of-study-ai-ten.vercel.app
 3. Allez dans **Authentication** → **URL Configuration**
 4. Ajoutez les URLs suivantes dans **Redirect URLs** :
 
-\`\`\`
+```
 https://v0-remix-of-study-ai-ten.vercel.app/auth/session-handler
 https://v0-remix-of-study-ai-ten.vercel.app/
-\`\`\`
+```
 
 5. Ajoutez également l'URL de développement si nécessaire :
 
-\`\`\`
+```
 http://localhost:3000/auth/session-handler
 http://localhost:3000/
-\`\`\`
+```
 
 6. Cliquez sur **Save**
 
@@ -94,6 +94,6 @@ Voici le flux complet de l'authentification par lien magique :
 ## Support
 
 Si vous rencontrez toujours des problèmes après avoir suivi ces étapes, vérifiez les logs de la console (messages `[v0]`) et contactez le support.
-\`\`\`
+```
 
 ```typescript file="" isHidden

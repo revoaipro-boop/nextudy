@@ -26,9 +26,9 @@ Le script `scripts/014_create_activation_tokens.sql` doit être exécuté dans v
 
 Après l'exécution, vérifiez que la table existe :
 
-\`\`\`sql
+```sql
 SELECT * FROM activation_tokens LIMIT 1;
-\`\`\`
+```
 
 Si la requête fonctionne (même si elle retourne 0 lignes), la table est créée avec succès.
 
@@ -95,7 +95,7 @@ L'admin reçoit un email contenant :
 
 Assurez-vous que ces variables sont configurées dans Vercel :
 
-\`\`\`env
+```env
 # SMTP Configuration
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
@@ -107,7 +107,7 @@ ADMIN_EMAIL=elliothuet2@gmail.com
 
 # Application URL
 NEXT_PUBLIC_APP_URL=https://votre-domaine.vercel.app
-\`\`\`
+```
 
 ## Sécurité
 

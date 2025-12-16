@@ -8,9 +8,9 @@ This application is deployed at: **https://nextudy.fr**
 
 Make sure the following environment variable is set in your Vercel project:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_APP_URL=https://nextudy.fr
-\`\`\`
+```
 
 This URL is used for:
 - Magic link authentication redirects
@@ -55,16 +55,16 @@ This URL is used for:
    In the **Redirect URLs** field, add the following URLs (one per line):
 
    **Production URLs (REQUIRED):**
-   \`\`\`
+   ```
    https://nextudy.fr/auth/session-handler
    https://nextudy.fr/
-   \`\`\`
+   ```
 
    **Development URLs (OPTIONAL - for local testing):**
-   \`\`\`
+   ```
    http://localhost:3000/auth/session-handler
    http://localhost:3000/
-   \`\`\`
+   ```
 
 4. **Save Configuration**
    - Click the **Save** button at the bottom
@@ -123,15 +123,15 @@ If the redirect URL is not configured, users will see:
 
 For local development, use:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-\`\`\`
+```
 
 Or set the `NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL` variable:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL=http://localhost:3000
-\`\`\`
+```
 
 ### Detailed Troubleshooting
 

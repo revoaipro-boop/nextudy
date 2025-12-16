@@ -8,14 +8,14 @@ Le système d'authentification utilise **SMTP via Gmail** pour envoyer tous les 
 
 Ajoutez ces variables à votre projet Vercel ou fichier `.env.local` :
 
-\`\`\`env
+```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=studyai.notifications@gmail.com
 SMTP_PASSWORD=mitp vtmj izrr eegp
 ADMIN_EMAIL=elliothuet2@gmail.com
 NEXT_PUBLIC_APP_URL=https://votre-domaine.vercel.app
-\`\`\`
+```
 
 ## Flux d'inscription
 
@@ -111,7 +111,7 @@ Pour créer un App Password :
 
 Le système utilise des logs préfixés `[v0]` pour faciliter le débogage :
 
-\`\`\`
+```
 [v0] Initializing email module with SMTP...
 [v0] SMTP_HOST: smtp.gmail.com
 [v0] SMTP_PORT: 587
@@ -121,6 +121,6 @@ Le système utilise des logs préfixés `[v0]` pour faciliter le débogage :
 [v0] Sending email via SMTP...
 [v0] ✅ Email sent successfully via SMTP!
 [v0] Message ID: <...>
-\`\`\`
+```
 
 Consultez les logs serveur pour diagnostiquer les problèmes d'envoi d'e-mails.

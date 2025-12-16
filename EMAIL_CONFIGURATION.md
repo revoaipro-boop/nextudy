@@ -22,14 +22,14 @@ Pour que les e-mails soient correctement envoyés, vous devez :
 
 3. **Configurer les variables d'environnement** :
 
-\`\`\`env
+```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=votre-email@gmail.com
 SMTP_PASSWORD=votre-mot-de-passe-application
 ADMIN_EMAIL=elliothuet2@gmail.com
 NEXT_PUBLIC_APP_URL=https://votre-domaine.com
-\`\`\`
+```
 
 ## Flux d'e-mails
 
@@ -47,14 +47,14 @@ NEXT_PUBLIC_APP_URL=https://votre-domaine.com
 
 ## Variables d'environnement
 
-\`\`\`env
+```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=votre-email@gmail.com
 SMTP_PASSWORD=mot-de-passe-application-16-caracteres
 ADMIN_EMAIL=elliothuet2@gmail.com
 NEXT_PUBLIC_APP_URL=https://votre-domaine.com
-\`\`\`
+```
 
 ## Test de l'envoi
 

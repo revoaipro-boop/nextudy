@@ -15,19 +15,19 @@ Add these environment variables to your Vercel project or `.env.local` file:
 
 ### Email Configuration (Gmail SMTP)
 
-\`\`\`env
+```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASSWORD=your-app-password
 ADMIN_EMAIL=admin@tonsite.fr
-\`\`\`
+```
 
 ### Application URL
 
-\`\`\`env
+```env
 NEXT_PUBLIC_APP_URL=https://nextudy.fr
-\`\`\`
+```
 
 For local development, use `http://localhost:3000`
 
@@ -64,10 +64,10 @@ Replace `admin@tonsite.fr` with your actual admin email address or set the `ADMI
 
 Execute the SQL migration to add the verification system:
 
-\`\`\`bash
+```bash
 # The migration script is located at:
 scripts/013_add_verification_system.sql
-\`\`\`
+```
 
 This will:
 - Add verification columns to the `profiles` table
@@ -85,16 +85,16 @@ This will:
 4. In the **Redirect URLs** section, add:
 
 **Production URLs:**
-\`\`\`
+```
 https://nextudy.fr/auth/session-handler
 https://nextudy.fr/
-\`\`\`
+```
 
 **Development URLs (optional):**
-\`\`\`
+```
 http://localhost:3000/auth/session-handler
 http://localhost:3000/
-\`\`\`
+```
 
 5. Click **Save**
 
@@ -106,11 +106,11 @@ After a user signs up:
 1. Admin receives an email with user details (display name and UUID)
 2. Admin must manually approve the user by updating their profile in Supabase:
 
-\`\`\`sql
+```sql
 UPDATE profiles 
 SET verification_status = 'approved', is_verified = true 
 WHERE id = 'user-uuid-here';
-\`\`\`
+```
 
 You can create an admin dashboard to manage this process.
 

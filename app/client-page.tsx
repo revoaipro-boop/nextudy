@@ -424,7 +424,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Zap className="h-7 w-7 text-black" />
+                      <Zap className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Multiforme</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -435,7 +435,7 @@ export default function ClientPage() {
                   {/* New features */}
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <BookOpen className="h-7 w-7 text-black" />
+                      <BookOpen className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Fiche de révisions</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -445,7 +445,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <MessageSquare className="h-7 w-7 text-black" />
+                      <MessageSquare className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Chat IA</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -455,7 +455,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Printer className="h-7 w-7 text-black" />
+                      <Printer className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Imprimeur</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -465,7 +465,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Clock className="h-7 w-7 text-black" />
+                      <Clock className="h-7 w-7 text-white" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Mode concentration</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -475,7 +475,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <History className="h-7 w-7 text-black" />
+                      <History className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Historique</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -485,7 +485,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <ListTodo className="h-7 w-7 text-black" />
+                      <ListTodo className="h-7 w-7 text-background" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Lister vos taches</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -495,7 +495,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Type className="h-7 w-7 text-black" />
+                      <Type className="h-7 w-7 text-primary" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Traitement de texte</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -506,7 +506,7 @@ export default function ClientPage() {
                   {/* Duplicate the cards for seamless loop */}
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <FileText className="h-7 w-7 text-black" />
+                      <FileText className="h-7 w-7 text-primary" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Résumé Intelligent</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -516,7 +516,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Brain className="h-7 w-7 text-black" />
+                      <Brain className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Flashcard Automatique</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -526,7 +526,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Zap className="h-7 w-7 text-black" />
+                      <Zap className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Multiforme</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -536,7 +536,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <BookOpen className="h-7 w-7 text-black" />
+                      <BookOpen className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Fiche de révisions</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -546,7 +546,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <MessageSquare className="h-7 w-7 text-black" />
+                      <MessageSquare className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Chat IA</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -556,7 +556,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Printer className="h-7 w-7 text-black" />
+                      <Printer className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Imprimeur</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -566,7 +566,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Clock className="h-7 w-7 text-black" />
+                      <Clock className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Mode concentration</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -576,7 +576,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <History className="h-7 w-7 text-black" />
+                      <History className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Historique</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -586,7 +586,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <ListTodo className="h-7 w-7 text-black" />
+                      <ListTodo className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Lister vos taches</h4>
                     <p className="text-muted-foreground leading-relaxed">
@@ -596,7 +596,7 @@ export default function ClientPage() {
 
                   <div className="group p-8 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 min-w-[320px] flex-shrink-0 snap-center">
                     <div className="bg-black/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                      <Type className="h-7 w-7 text-black" />
+                      <Type className="h-7 w-7 text-foreground" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">Traitement de texte</h4>
                     <p className="text-muted-foreground leading-relaxed">

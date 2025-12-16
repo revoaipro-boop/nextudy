@@ -17,14 +17,14 @@ Lorsqu'un utilisateur remplit le formulaire d'inscription :
 **Sujet :** "Nouvelle inscription sur le site"
 
 **Contenu :**
-\`\`\`
+```
 Nouvelle inscription sur le site.
 
 Nom de l'utilisateur : [nom_affichage]
 E-mail de l'utilisateur : [email_utilisateur]
 Identifiant (UUID) : [uuid]
 Date : [date_heure_complète]
-\`\`\`
+```
 
 ### 🔧 Variables d'environnement utilisées
 
@@ -72,14 +72,14 @@ Date : [date_heure_complète]
 
 Tous les logs utilisent le préfixe `[v0]` pour faciliter le diagnostic :
 
-\`\`\`
+```
 [v0] Starting sign up process
 [v0] User created successfully
 [v0] Sending admin notification...
 [v0] sendAdminNotification called
 [v0] Sending email via Gmail SMTP...
 [v0] ✅ Email sent successfully!
-\`\`\`
+```
 
 ### ⚠️ Points importants
 
